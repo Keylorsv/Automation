@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Debug Suite" verbose="1">
+    <test name="Debug Test">
+        <classes>
+            <class name="com.practicetestautomation.tests.Login.exceptions.ExceptionsTest">
+                <methods>
+                    <include name="noSuchElementExceptionTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

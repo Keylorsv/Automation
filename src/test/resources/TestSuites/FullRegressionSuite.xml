@@ -1,0 +1,43 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Full Regression Suite" verbose="1">
+    <test name="Positive Login Test">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="username" value="student"></parameter>
+        <parameter name="password" value="Password123"></parameter>
+        <parameter name="expectedMessage" value="Congratulations student. You successfully logged in"></parameter>
+        <classes>
+            <class name="com.practicetestautomation.tests.Login.login.LoginTests">
+                <methods>
+                    <include name="TestLoginFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+   <test name="Incorrect Username Test">
+       <parameter name="browser" value="edge"></parameter>
+       <parameter name="username" value="WrongUserName"></parameter>
+       <parameter name="password" value="Password123"></parameter>
+       <parameter name="expectedErrorMessage" value="Your username is invalid!"></parameter>
+        <classes>
+            <class name="com.practicetestautomation.tests.Login.login.LoginTests">
+                <methods>
+                    <include name="NegativeLoginTest"></include>
+                </methods>w
+            </class>
+        </classes>
+    </test>
+    <test name="Incorrect Password Test">
+        <parameter name="username" value="student"></parameter>
+        <parameter name="password" value="WrongPassword"></parameter>
+        <parameter name="expectedErrorMessage" value="Your password is invalid!"></parameter>
+        <classes>
+            <class name="com.practicetestautomation.tests.Login.login.LoginTests">
+                <methods>
+                    <include name="NegativeLoginTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
